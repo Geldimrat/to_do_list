@@ -1,0 +1,27 @@
+.nav {
+  width: 90%;
+  margin: 0 auto;
+  @include flexBox(space-between, center);
+  
+  .btns {
+    @include flexBox(space-between, center);
+
+    .btn {
+      padding: 12px 40px;
+      background: #4246c9;
+      border-radius: 100px;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 150.5%;
+      color: #ffffff;
+      text-align: center;
+      font-family: serif;
+      display: inline-block;
+      text-decoration: none;
+
+      &:not(:first-child){
+        margin-left: 100px;
+      }
+    }
+  }
+}

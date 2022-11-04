@@ -1,0 +1,123 @@
+.home {
+  .home_header {
+    height: 81px;
+    @include flexBox(center, center);
+    .left {
+      width: 20%;
+      height: 100%;
+      padding: 0 46px;
+      @include flexBox(center, center);
+      background: #fafbfc;
+    }
+    .right {
+      width: 80%;
+      height: 100%;
+      background: #feffff;
+      border: 1px solid #4246c9;
+      @include flexBox(center, center);
+
+      .content {
+        width: 98%;
+        margin: 0 auto;
+        @include flexBox(space-between, center);
+
+        .todo_title {
+          .todo_name {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 36px;
+          }
+
+          .description {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 10px;
+          }
+        }
+
+        .search_profile {
+          @include flexBox(center, center);
+          .search {
+            padding: 10px 17px;
+            background: #ffffff;
+            border: 1px solid #9f9f9f;
+            border-radius: 1000px;
+            @include flexBox(center, center);
+            .icon {
+              height: 20px;
+            }
+
+            .input_search {
+              height: 20px;
+              outline: none;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 21px;
+              padding: 0 10px;
+            }
+          }
+
+          .profile {
+            margin-left: 66px;
+            .user {
+              cursor: pointer;
+              .img {
+                width: 42px;
+                height: 42px;
+                border-radius: 50%;
+                background: green;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .todo_list_content {
+    width: 100%;
+    height: 90vh;
+    @include flexBox(center, flex-start);
+
+    .left {
+      overflow: auto;
+      width: 20%;
+      height: 100%;
+      background: #feffff;
+      border: 1px solid #4246c9;
+      padding: 20px;
+      .top {
+        @include flexBox(space-between, center);
+        
+        p.lists {
+          font-weight: 600;
+          font-size: 20px;
+          line-height: 150.5%;
+        }
+      }
+
+      .my_lists {
+        width: 100%;
+        @include flexBox(center, center);
+        flex-direction: column;
+        .my_list {
+          margin-top: 28px;
+        }
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    .right {
+      width: 80%;
+      height: 100%;
+      background: blue;
+    }
+  }
+}

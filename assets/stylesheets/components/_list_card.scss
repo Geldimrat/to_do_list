@@ -1,0 +1,39 @@
+.list_card {
+  width: 203px;
+  background: #8875ff;
+  border-radius: 6px;
+  padding: 6px 10px;
+  .content {
+    width: 98%;
+    margin: 0 auto;
+    @include flexBox(space-between, center);
+
+    .title_card {
+      p.name {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        color: #ffffff;
+      }
+
+      p.info {
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 10px;
+        color: #ffffff;
+      }
+    }
+
+    .action {
+      @include flexBox(center, center);
+
+      .add {
+        margin-left: 20px;
+        cursor: pointer;
+      }
+      .del {
+        cursor: pointer;
+      }
+    }
+  }
+}

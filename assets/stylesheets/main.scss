@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Philosopher&family=Poppins:wght@200&display=swap');
+
+//base
+@import './base/variable';
+@import './base/mixin';
+@import './base/restart';
+
+//components
+@import './components/header', './components/list_card';
+
+//pages
+@import './pages/index', './pages/registration', './pages/login', './pages/home';
+
+.main {
+  .header {
+    width: 100%;
+    height: 15vh;
+    @include flexBox(center, flex-end);
+  }
+}
