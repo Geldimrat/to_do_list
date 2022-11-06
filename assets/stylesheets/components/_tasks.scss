@@ -1,0 +1,47 @@
+.task_card {
+  margin: 10px;
+  @include flexBox(center, center);
+  width: 212px;
+  height: 83px;
+  background-color: whitesmoke;
+  filter: drop-shadow(4px 5px 4px rgba(66, 70, 201, 0.25));
+  .contents {
+    @include flexBox(space-between, center);
+    margin-top: 10px;
+    .color {
+      margin-left: 15px;
+      width: 5px;
+      height: 39px;
+      background: #e80e0e;
+    }
+    .yellow {
+      width: 5px;
+      height: 39px;
+      color: #ffa717;
+    }
+    .title_cards {
+      @include flexBox(flex-start, center);
+      flex-direction: column;
+      width: 152px;
+      height: 38px;
+      .name_task {
+        font-weight: 600;
+        font-size: 12px;
+        color: black;
+        margin-right: 10px;
+
+        .need {
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 21px;
+          color: rgba(0, 0, 0, 0.34);
+        }
+      }
+    }
+    .actions {
+      .delet {
+        margin-right: 10px;
+      }
+    }
+  }
+}

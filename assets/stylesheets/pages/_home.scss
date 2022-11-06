@@ -1,6 +1,11 @@
 .home {
   .home_header {
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
     height: 81px;
+    position: fixed;
+    z-index: 9;
     @include flexBox(center, center);
     .left {
       width: 20%;
@@ -23,7 +28,7 @@
 
         .todo_title {
           .todo_name {
-            font-family: 'Poppins';
+            font-family: "Poppins";
             font-style: normal;
             font-weight: bold;
             font-size: 24px;
@@ -31,7 +36,7 @@
           }
 
           .description {
-            font-family: 'Poppins';
+            font-family: "Poppins";
             font-style: normal;
             font-weight: 400;
             font-size: 14px;
@@ -64,12 +69,108 @@
           .profile {
             margin-left: 66px;
             .user {
-              cursor: pointer;
+              position: relative;
+              display: inline-block;
+
               .img {
                 width: 42px;
                 height: 42px;
                 border-radius: 50%;
-                background: green;
+                cursor: pointer;
+                img {
+                  width: 42px;
+                  height: 42px;
+                }
+              }
+
+              .profile_info {
+                display: none;
+                position: absolute;
+                right: 0;
+                z-index: 1;
+
+                .profile_card {
+                  background: #ffffff;
+                  box-shadow: 4px 5px 4px rgba(66, 70, 156, 0.31);
+                  border-radius: 5px;
+                  margin-top: 25px;
+                  .user_info {
+                    @include flexBox(center, center);
+                    padding: 20px 15px;
+                    border-bottom: 2px solid rgba(193, 193, 193, 0.62);
+                    .avatar {
+                      width: 50px;
+                      height: 50px;
+                      img {
+                        width: 100%;
+                        object-fit: contain;
+                      }
+                    }
+
+                    .info {
+                      margin-left: 15px;
+                      p.username {
+                        font-weight: 600;
+                        font-size: 16px;
+                        line-height: 150.5%;
+                        color: #000000;
+                      }
+
+                      p.email {
+                        font-weight: 600;
+                        font-size: 12px;
+                        line-height: 150.5%;
+                        color: #c1c1c1;
+                      }
+                    }
+                  }
+
+                  .settings {
+                    padding: 30px 15px;
+
+                    .account_setting {
+                      p.title {
+                        font-weight: bold;
+                        font-size: 18px;
+                        line-height: 150.5%;
+                        color: #8875ff;
+                      }
+
+                      margin-bottom: 22px;
+                      .change_password {
+                        &:not(:first-child) {
+                          margin-top: 22px;
+                        }
+                        @include flexBox(space-between, center);
+                        cursor: pointer;
+                        .key_icon {
+                          @include flexBox(center, center);
+                          .name {
+                            margin-left: 6px;
+                            font-weight: 400;
+                            font-size: 13px;
+                            line-height: 150.5%;
+                          }
+                        }
+                      }
+                    }
+
+                    .log_out {
+                      @include flexBox(flex-start, center);
+                      cursor: pointer;
+                      .name {
+                        margin-left: 6px;
+                        font-weight: 400;
+                        font-size: 13px;
+                        line-height: 150.5%;
+                      }
+                    }
+                  }
+                }
+              }
+
+              .active_profile {
+                display: block;
               }
             }
           }
@@ -79,8 +180,9 @@
   }
 
   .todo_list_content {
+    padding-top: 81px;
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     @include flexBox(center, flex-start);
 
     .left {
@@ -92,7 +194,7 @@
       padding: 20px;
       .top {
         @include flexBox(space-between, center);
-        
+
         p.lists {
           font-weight: 600;
           font-size: 20px;
@@ -117,7 +219,45 @@
     .right {
       width: 80%;
       height: 100%;
-      background: blue;
+      overflow: auto;
+
+      .tasks {
+        width: 100%;
+        height: 70%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(212px, 1fr));
+        grid-column-gap: 60px;
+        grid-row-gap: 26px;
+        overflow: auto;
+      }
+
+      .completed_tasks_main {
+        margin-top: 15px;
+        .title {
+          @include flexBox(flex-start, center);
+          padding: 0px 50px 20px;
+          border-bottom: 1px solid #898bdd;
+          .icon {
+            height: 14px;
+          }
+          .name {
+            margin-left: 11px;
+            height: 10px;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 18px;
+            color: #000000;
+          }
+        }
+
+        .completed_tasks {
+          height: 120px;
+          overflow: auto;
+          .com_task {
+            margin-top: 25px;
+          }
+        }
+      }
     }
   }
 }

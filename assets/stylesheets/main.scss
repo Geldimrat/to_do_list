@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Philosopher&family=Poppins:wght@200&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Philosopher&family=Poppins:wght@200&display=swap");
 
 //base
-@import './base/variable';
-@import './base/mixin';
-@import './base/restart';
+@import "./base/variable";
+@import "./base/mixin";
+@import "./base/restart";
 
 //components
-@import './components/header', './components/list_card';
+@import "./components/header", "./components/list_card", "./components/tasks", "./components/completed_task";
 
 //pages
-@import './pages/index', './pages/registration', './pages/login', './pages/home';
+@import "./pages/index", "./pages/registration", "./pages/login", "./pages/home";
 
 .main {
   .header {
@@ -17,4 +17,9 @@
     height: 15vh;
     @include flexBox(center, flex-end);
   }
+}
+
+body {
+  max-width: 1440px;
+  margin: 0 auto;
 }
